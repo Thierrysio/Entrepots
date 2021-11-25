@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Entrepots.Vue.ColisVue">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame>
+                    <Image Source="photoamazon.jfif" />
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Grid Padding="10">
+                    <Frame >
+                        <StackLayout Orientation="Horizontal" >
+                            <Image Source="photoamazon.jfif" WidthRequest="66" />
+                            <StackLayout VerticalOptions="Center"  Padding="0,0,60,0">
+                                <Label
+                                            Text="Petit colis"
+                                            VerticalOptions="Center" 
+                                    HorizontalOptions="Start"/>
+
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="End" >
+                                <Button Text="Placer" Command="{Binding CommandPlacerPetitColis}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                <Grid Padding="10">
+                    <Frame >
+                        <StackLayout Orientation="Horizontal" >
+                            <Image Source="photoamazon.jfif" WidthRequest="66" />
+                            <StackLayout VerticalOptions="Center"  Padding="0,0,60,0">
+                                <Label
+                                            Text="Gros colis"
+                                            VerticalOptions="Center" 
+                                    HorizontalOptions="Start"/>
+                               
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="End" >
+                                <Button Text="Placer" Command="{Binding CommandPlacerGrosColis}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
