@@ -1,6 +1,7 @@
 ﻿using Entrepots.Modele;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Entrepots.VueModele
@@ -8,7 +9,7 @@ namespace Entrepots.VueModele
     internal class CasierVueModele : BaseVueModele
     {
         #region Attributs
-        private List<string> _lesColis = new List<string>();
+        private List<CategorieColis> _lesColis = new List<CategorieColis>();
         Casier _leCasier;
 
         #endregion
@@ -17,8 +18,9 @@ namespace Entrepots.VueModele
 
         public CasierVueModele(List<List<int>> param,Casier param2)
         {
-            LesColis = this.GetlisteImages(param);
             LeCasier = param2;
+
+            LesColis = this.GetlisteImages(param);
         }
 
 
@@ -28,7 +30,7 @@ namespace Entrepots.VueModele
 
         #endregion
 
-        public List<string> LesColis
+        public List<CategorieColis> LesColis
         {
             get
             {
@@ -43,16 +45,20 @@ namespace Entrepots.VueModele
 
 
         #region Methodes
-        public List<string> GetlisteImages(List<List<int>>  param)
+        public List<CategorieColis> GetlisteImages(List<List<int>>  param)
         {
-            List<string> resultat = new List<string>();
+            List<CategorieColis> resultat = new List<CategorieColis>();
 
             for (int x = 0; x < LeCasier.Ligne; x++)
             {
                 for (int y = 0; y < LeCasier.Colonne; y++)
                 {
                     // codage du remplissage de la liste d'images
+                   
+                        var laCategorie = CategorieColis.CollClasse.FirstOrDefault(a => a.NbCases == param[x][y]);
 
+                        resultat.Add(laCategorie);
+                    
 
                 }
             }

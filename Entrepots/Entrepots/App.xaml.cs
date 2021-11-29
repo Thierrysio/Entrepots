@@ -15,8 +15,8 @@ namespace Entrepots
 
             MainPage = new ColisVue();
 
-            CategorieColis ct1 = new CategorieColis("petit colis", 1);
-            CategorieColis ct2 = new CategorieColis("gros colis", 3);
+            CategorieColis ct1 = new CategorieColis("petit colis", 1, "colis1.jfif");
+            CategorieColis ct2 = new CategorieColis("gros colis", 3, "colis3.jfif");
 
 
             Entrepot E1 = new Entrepot(1, "Entrepot 01");
